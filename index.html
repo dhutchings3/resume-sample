@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sally Student | Resume</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A brief overview of Sally Student's education, professional experience, and accomplishmnets." />
+    <link href="main.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div id='root-container'></div>
+
+
+    <script
+      src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    
+    <script type='text/babel'>
+      
+      function Nav(props) {
+        return (
+          <nav className = {props.className}>
+            <ul>
+              <li><a href="#contact_info">Contact Info</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#professional_background">Experience</a></li>
+            </ul>
+          </nav>
+        );
+      }
+      
+      function Header(props) {
+        return (
+        <header className={props.className}>
+          {props.children}
+        </header>
+        );
+      }
+
+      function Contact(props) {
+        return (
+          <section className={props.className}>
+          <address>
+            <h3>Contact Info</h3>
+              <p>Sally Student</p>
+              <a href="mailto:sally.student@gmail.com">sally.student@gmail.com</a>
+              <p>689-554-3345</p>
+              <p><img src="https://koreyhowellphotography.com/wp-content/uploads/2017/09/AdobeStock_122362963-1028x675.jpg" alt="photo of girl" /></p>
+          </address>
+          </section>
+        );
+      }
+      
+      function Education(props) {
+        return (
+          <section className={props.className}>
+              <header>
+                <h3>Education</h3>
+              </header>
+                <p>Bachelor's Degree in Computer Science from Texas Christian University</p>
+                <p>Associate's Degree in Business Administraion from Denton Community College</p>
+          </section>
+        );
+      }
+   
+      function Experience(props) {
+        return (
+          <section className={props.className}>  
+            <h3>Professional Background</h3>
+                <h4>Junior Front End Web Developer</h4>
+                <h5>Koddi Company</h5>
+                <p>08/01/2017-04/01/2019</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor scelerisque sodales. Vivamus quam orci, tincidunt at sapien vel, commodo viverra nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris semper tincidunt scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce sagittis tempus lobortis. Curabitur tristique enim a convallis ullamcorper. Cras at mauris et lacus eleifend imperdiet.</p>
+                <h4>Web Developer Intern</h4>
+                <h5>R.J.S. Company</h5>
+                <p>01/01/2017-06/01/2017</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor scelerisque sodales. Vivamus quam orci, tincidunt at sapien vel, commodo viverra nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris semper tincidunt scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+          </section>
+        );
+      }
+    
+    ReactDOM.render(
+      <div className = 'all'>
+        <Header className = 'title'>
+          <h1>Sally Student Resume</h1>
+          <h2>Hi there, my name is Sally and I'm a passionate front-end developer looking for new opportunites in the tech industry.</h2>
+        </Header>
+        <main>
+          <Nav className = 'navSection' />
+          <Contact className = 'contactSection' />
+          <Education className = 'educationSection' />
+          <Experience className = 'experienceSection' />
+        </main>
+      </div>,
+      document.querySelector('#root-container')
+    );
+    </script>
+  </body>
+</html>
